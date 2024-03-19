@@ -1,13 +1,12 @@
-import React from 'react';
-import { Button } from '@shopify/polaris';
+import React from 'react'
 
 const LeftColumn = () => {
   return (
     <div>
       <h2>Columna Izquierda</h2>
-      <Button>Botón Polaris</Button>
+      <button className="btn btn-primary">Est laborum</button>
     </div>
-  );
+  )
 }
 
-export default LeftColumn;
+export default LeftColumn

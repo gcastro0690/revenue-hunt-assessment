@@ -1,27 +1,27 @@
-import React, { useState } from 'react';
+import { TextField } from '@shopify/polaris'
+import React from 'react'
 
-const RightColumn = () => {
-  const [borderRadius, setBorderRadius] = useState(0);
-
-  const handleBorderRadiusChange = (e) => {
-    setBorderRadius(e.target.value);
-  }
-
+const RightColumn = ({
+  setCssStyle,
+  cssStyle,
+}: {
+  setCssStyle: (value: string) => void
+  cssStyle: string
+}) => {
   return (
     <div>
       <h2>Columna Derecha</h2>
       <label htmlFor="borderRadiusInput">Border Radius:</label>
-      <input
-        type="range"
-        id="borderRadiusInput"
-        min="0"
-        max="50"
-        value={borderRadius}
-        onChange={handleBorderRadiusChange}
+      <TextField
+        autoComplete="off"
+        label="CSS Editor"
+        value={cssStyle}
+        onChange={setCssStyle}
+        multiline={10}
       />
-      <p>Valor actual: {borderRadius}</p>
+      <p>Valor actual: {cssStyle}</p>
     </div>
-  );
+  )
 }
 
-export default RightColumn;
+export default RightColumn

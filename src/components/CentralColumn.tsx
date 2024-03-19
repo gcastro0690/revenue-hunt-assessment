@@ -1,17 +1,18 @@
 import React from 'react'
+import { styled } from 'styled-components'
 
-const CentralColumn = ({ borderRadius }) => {
-  const buttonStyle = {
-    borderRadius: `${borderRadius}px`,
-  }
+const CentralColumn = ({ cssStyle }: { cssStyle: string }) => {
+  const css = `.container{ 
+    ${cssStyle} 
+  }`
 
   return (
-    <div>
+    <div className="container">
+      <style>{css}</style>
       <h2>Lorem ipsum dolor sit amet</h2>
       <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt u</p>
-      <button className="btn btn-primary" style={buttonStyle}>
-        Est laborum
-      </button>
+
+      <button className="btn btn-primary">Est laborum</button>
     </div>
   )
 }
